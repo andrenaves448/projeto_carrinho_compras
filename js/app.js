@@ -7,7 +7,7 @@ function adicionar() {
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
     let valorUnitario = parseFloat(produto.split('R$')[1]);
-    let quantidade = parseInt(document.getElementById('quantidade').value);
+    let quantidade = document.getElementById('quantidade').value;
     //calcular o preço, o nosso subtotal
     let preco = quantidade * valorUnitario;
     let carrinho = document.getElementById('lista-produtos');
@@ -18,6 +18,7 @@ function adicionar() {
    totalGeral = totalGeral + preco;
    let campoTotal = document.getElementById('valor-total');
    campoTotal.textContent = `R$${totalGeral}`;
+   document.getElementById('quantidade').value = 0;
 }
 function limpar(){
 
